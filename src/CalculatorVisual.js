@@ -11,6 +11,31 @@ export default function CalculatorVisual() {
         setCurrentString('');
     };
 
+    const parseString = () => {
+        const operators = ["+", "-", "/", "*"];
+         const tokens = [];
+         let currentToken = "";
+
+        for (let i = 0; i < inputString.length; i++) {
+             const char = inputString[i];
+
+                if (operators.includes(char)) {
+                if (currentToken !== "") {
+                    tokens.push(currentToken);
+                }
+                tokens.push(char);
+                currentToken = "";
+                } else {
+                currentToken += char;
+                }
+            }
+
+            if (currentToken !== "") {
+                tokens.push(currentToken);
+            }
+
+    }
+
     return (
         <>
             <div id="calculator-frame" style={{ position: "fixed", backgroundColor: "lightgray", height: "700px", width: "600px", left: "50%", top: "50%", borderRadius: "20px", transform: "translate(-50%, -50%)" }}>
