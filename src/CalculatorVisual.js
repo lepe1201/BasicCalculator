@@ -4,7 +4,7 @@ export default function CalculatorVisual() {
     const [currentString, setCurrentString] = useState('');
 
     const handleStringClick = (item) => {
-        setCurrentString(currentString + item);
+        setCurrentString(currentString + item);  // complete string
     };
 
     const handleClearClick = () => {
